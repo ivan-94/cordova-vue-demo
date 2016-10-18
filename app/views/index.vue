@@ -2,6 +2,7 @@
  h1 DEMO
  div.test {{ num }}
  button(@click="increase") INCREASE
+ a(v-link="{name: 'foo'}") foo
 </template>
 
 <script>

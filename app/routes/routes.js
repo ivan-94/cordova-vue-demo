@@ -7,6 +7,13 @@ const routeMap = {
       require(['views/index'], resolve)
     },
   },
+  
+  '/foo': {
+    name: 'foo',
+    component: (resolve) => {
+      require(['views/foo'], resolve)
+    },
+  },
 }
 
 const redirectMap = {

@@ -29,7 +29,7 @@ module.exports = {
   output: {
     path: config.env.dist,
     filename: "[name].js",
-    publicPath: config.env.publicPath[process.env.NODE_ENV],
+    publicPath: config.env.publicPath,
   },
 
   /** 模块查找 **/

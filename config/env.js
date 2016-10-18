@@ -2,16 +2,8 @@ var path = require('path')
 
 module.exports = {
   entry:  path.resolve(__dirname,'../app/main.js'),        //入口文件
-  publicPath: {
-    //开发环境
-    'development': '/',
-    //联调, 应用在本地，接口在其他主机
-    'test': '/',
-    //部署到主机上测试
-    'test-build': '/',
-    //生成环境
-    'production': '/',
-  },
+  // ⚠  disable publicPath. because publicPath will affect html-webpack-plugin inject, and cordova APP inside use file:// protocol
+  publicPath: undefined,
 
   src:    path.resolve(__dirname, '../app'),                // 源代码目录
   dist:   path.resolve(__dirname, '../www'),               // 输出目录

@@ -30,6 +30,7 @@ var webpackConfig = {
     port: 8080,
     contentBase: config.env.dist,
     hot: true,
+    inline: true,
     // 静默，避免扰乱控制台
     quiet: true,
     // 代理到mockserver

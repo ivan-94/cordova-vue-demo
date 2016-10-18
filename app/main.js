@@ -43,6 +43,7 @@ const app = {
     if (typeof cordova != 'undefined') {
       document.addEventListener('deviceready', this.onDeviceReady, false)
     } else {
+      // webpack-dev-server
       this.onDeviceReady()
     }
   },
