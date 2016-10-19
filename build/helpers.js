@@ -51,3 +51,17 @@ exports.loaderStyles = function (options){
   }
   return output
 }
+
+
+exports.generateCSPString = function (csp) {
+  if (csp) {
+    var str = ''
+    for(var key in csp) {
+      str += key + ' ' + csp[key] + '; '
+    }
+
+    if (str !== '') {
+      return str
+    }
+  }
+}

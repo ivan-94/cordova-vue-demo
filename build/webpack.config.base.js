@@ -9,6 +9,7 @@ var config  = require('../config/index')
 var pkg     = require('../package.json')
 var svgoConfig = require('../config/svgo.config.json')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CSPConfig = require('../config/csp')
 var projectRoot = path.resolve(__dirname, '../')
 var helpers = require('./helpers')
 var exec = require('child_process').execSync
@@ -20,6 +21,8 @@ try {
   // 复制
   exec('cp -r ' + path.join(config.env.static, '*') + ' ' + config.env.dist)
 } catch (ignore) {}
+
+CSPConfig = helpers.generateCSPString(CSPConfig)
 
 module.exports = {
   entry: {
@@ -134,6 +137,8 @@ module.exports = {
         template: path.join(config.env.assets,'index.jade'),
         inject: true,
         //favicon: ''
+        // CSP(Content Security Policy)
+        csp: CSPConfig,
       }
     ),
 
