@@ -34,29 +34,28 @@ exports.vueStyles = function (options) {
   return {
     css: generateLoader(['css']),
     sass: generateLoader(['css', 'sass?indentedSyntax']),
-    scss: generateLoader(['css', 'sass']),
+    scss: generateLoader(['css', 'sass'])
   }
 }
 
 // Generate loaders for standalone style files (outside of *.vue)
-exports.loaderStyles = function (options){
+exports.loaderStyles = function (options) {
   var output = []
   var loaders = exports.vueStyles(options)
   for (var ext in loaders) {
     var loader = loaders[ext]
     output.push({
       test: new RegExp('\\.' + ext + '$'),
-      loader: loader,
+      loader: loader
     })
   }
   return output
 }
 
-
 exports.generateCSPString = function (csp) {
   if (csp) {
     var str = ''
-    for(var key in csp) {
+    for (var key in csp) {
       str += key + ' ' + csp[key] + '; '
     }
 

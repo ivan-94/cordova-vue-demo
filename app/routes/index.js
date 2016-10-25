@@ -7,10 +7,10 @@ Vue.use(VueRouter)
 
 let router = new VueRouter({
   hashbang: true,
-  linkActiveClass: 'active',
+  linkActiveClass: 'active'
 })
 
-//register route maps
+// register route maps
 configRouterMap(router)
 configRouterHooks(router)
 

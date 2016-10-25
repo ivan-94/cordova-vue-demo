@@ -6,12 +6,13 @@
 <script>
   import store from './vuex/store'
   export default {
-    //将store 注入根组件
+    // 将store 注入根组件
     store,
-    //应用加载完成
+    // 应用加载完成
     created () {
-    },
+    }
   }
+  
 </script>
 
 <style lang="scss">

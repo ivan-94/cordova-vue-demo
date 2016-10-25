@@ -40,7 +40,7 @@ const app = {
   },
 
   bindEvents () {
-    if (typeof cordova != 'undefined') {
+    if (typeof cordova !== 'undefined') {
       document.addEventListener('deviceready', this.onDeviceReady, false)
     } else {
       // webpack-dev-server
@@ -50,7 +50,7 @@ const app = {
 
   onDeviceReady () {
     router.start(App, '#app')
-  },
+  }
 }
 
 app.initialize()

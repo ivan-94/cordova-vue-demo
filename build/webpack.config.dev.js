@@ -4,14 +4,12 @@
  *
  */
 var webpack = require('webpack')
-var path = require('path')
 var config = require('../config/index')
 var baseConfig = require('./webpack.config.base')
 var merge = require('webpack-merge')
 var Dashboard = require('webpack-dashboard')
-var DashboardPlugin = require('webpack-dashboard/plugin');
+var DashboardPlugin = require('webpack-dashboard/plugin')
 var dashboard = new Dashboard()
-
 
 var webpackConfig = {
   devtool: 'source-map',
@@ -20,7 +18,7 @@ var webpackConfig = {
     new DashboardPlugin(dashboard.setData),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
 
   // 开发服务器
@@ -34,7 +32,7 @@ var webpackConfig = {
     // 静默，避免扰乱控制台
     quiet: true,
     // 代理到mockserver
-    proxy: config.env.proxy[process.env.NODE_ENV],
+    proxy: config.env.proxy[process.env.NODE_ENV]
   }
 }
 

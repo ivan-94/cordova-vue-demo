@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * defined CSP(Content Security Rules)
  * @type {Object}
@@ -6,6 +7,6 @@
 module.exports = {
   'default-src': "*",
   'style-src':   "'self' 'unsafe-inline'",
-  'script-src':  "'self' 'unsafe-inline'",
-  'img-src':     "'self' data:",
+  'script-src':  "'self' 'unsafe-inline' 'unsafe-eval'",
+  'img-src':     "* data:"
 }

@@ -6,19 +6,19 @@
 </template>
 
 <script>
-  import { increase } from 'actions/test'
+import { increase } from 'actions/test'
 
-  export default {
-    vuex: {
-      getters: {
-        num: (state) => state.test.num
-      },
-
-      actions: {
-        increase,
-      },
+export default {
+  vuex: {
+    getters: {
+      num: (state) => state.test.num
     },
+
+    actions: {
+      increase
+    }
   }
+}
 </script>
 
 <style lang="scss">
